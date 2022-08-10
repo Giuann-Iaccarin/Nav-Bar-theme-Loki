@@ -1,0 +1,137 @@
+@font-face {
+    font-family: LokiFont;
+    src: url(Loki-Regular.ttf);
+}
+
+
+:root {
+    --lightgreen: #d6d3ae;
+    --green: #50630d;
+    --yellow: #d6ae2f;
+    --darkgreen: #0b450a;
+    --black: #071a03;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background: linear-gradient(var(--darkgreen), var(--black));
+    width: 99%;
+    height: 719px;
+}
+
+div {
+    display: flex;
+    width: 100%;
+}
+
+nav {
+    width: 100%;
+    display: flex;
+    margin-left: auto;
+    margin-right: auto;
+    background: linear-gradient(var(--green), var(--darkgreen));
+    padding: 0.5%;
+}
+
+ul {
+    list-style-type: none;
+    display: flex;
+    width: 100%;
+    align-items: center;
+    margin: 0;
+}
+
+.testo {
+    display: inline;
+    width: 20%;
+    text-align: center; 
+    padding-top: 2%;
+    height: 100px;
+    box-shadow: 2px 2px 15px var(--lightgreen);
+    border-radius: 25px;
+    background: linear-gradient(var(--darkgreen), var(--green));
+
+}
+
+.testo:nth-child(1) {
+    margin-left: 1%;
+}
+
+.niente {
+    transform: scale(130%);
+    width: 5%;
+}
+
+.niente img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+a {
+    text-decoration: none;
+    color: var(--yellow);
+    font-size: xx-large;
+    font-family: LokiFont;
+}
+
+.testo:nth-child(1)::after {
+    content: 'HOME';
+}
+
+.testo:nth-child(3)::after {
+    content: 'ABOUT ME';
+}
+
+.testo:nth-child(5)::after {
+    content: 'VIDEO';
+}
+
+.testo:nth-child(7)::after {
+    content: 'FILM';
+}
+
+.testo::after {
+    position: absolute;
+    transform: translate(-90%, 150%);
+    color: var(--yellow);
+    font-size: xx-large;
+    font-family: LokiFont;
+    background: linear-gradient(var(--black), var(--green));
+    opacity: 0;
+    transition: 300ms;
+    letter-spacing: 2px;
+    box-shadow: 2px 2px 15px var(--lightgreen);
+    padding: 0.5%;
+}
+
+.testo:nth-child(1):hover {
+    background-image: url('loki11.jpg');
+    background-size: cover;
+}
+
+.testo:where(:nth-child(1), :nth-child(3), :nth-child(5), :nth-child(7)):hover::after {
+    opacity: 1;
+}
+
+.testo:hover a {
+    opacity: 0;
+}
+
+.testo:nth-child(3):hover {
+    background-image: url('loki22.jpg');
+    background-size: cover;
+}
+
+.testo:nth-child(7):hover {
+    background-image: url('loki44.jpg');
+    background-size: cover;
+}
+
+.testo:nth-child(5):hover {
+    background-image: url('loki33.jpg');
+    background-size: cover;
+}
